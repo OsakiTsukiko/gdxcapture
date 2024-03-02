@@ -1,15 +1,15 @@
-#include "gdxcapture.h"
+#include "xcapture.h"
 #include <godot_cpp/core/class_db.hpp>
 
 using namespace godot;
 
-void GDXCapture::_bind_methods() {
+void XCapture::_bind_methods() {
 }
 
-GDXCapture::GDXCapture() {
+XCapture::XCapture() {
 	// Initialize any variables here.
 }
 
-GDXCapture::~GDXCapture() {
+XCapture::~XCapture() {
 	// Add your cleanup here.
 }

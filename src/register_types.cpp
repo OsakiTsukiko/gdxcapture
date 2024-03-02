@@ -1,6 +1,6 @@
 #include "register_types.h"
 
-#include "gdxcapture.h"
+#include "xcapture.h"
 #include "xwinref.h"
 
 #include <gdextension_interface.h>
@@ -14,7 +14,7 @@ void initialize_gdxcapture(ModuleInitializationLevel p_level) {
 		return;
 	}
 
-	ClassDB::register_class<GDXCapture>();
+	ClassDB::register_class<XCapture>();
 	ClassDB::register_class<XWinRef>();
 }
 
