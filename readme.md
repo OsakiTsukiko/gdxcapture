@@ -1,3 +1,6 @@
+# !!!
+This project is mainly a test soo far and might be replaced by sth better (suing pipewire for example)
+
 # GDXCapture
 A godot extension that allows capture of X11 windows (or screens.. soon?) and converting them to textures.
   
