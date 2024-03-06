@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cljqnnuro1ebh"]
+[gd_scene load_steps=7 format=3 uid="uid://cljqnnuro1ebh"]
 
 [ext_resource type="Script" path="res://src/node_3d3.gd" id="1_i1cjq"]
 
@@ -7,6 +7,10 @@
 [sub_resource type="BoxMesh" id="BoxMesh_l5a42"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2sfgd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_w4eci"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_1rq1n"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_i1cjq")
@@ -28,6 +32,14 @@ transform = Transform3D(0.863959, 0.260416, -0.430998, 0, 0.855897, 0.517146, 0.
 light_energy = 2.371
 light_indirect_energy = 1.762
 light_volumetric_fog_energy = 1.152
+
+[node name="SphereScreen" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.96147, -0.117512, 0.372579, -0.00506812, 1.91487, 0.577273, -0.390639, 0.565208, -1.87828, 2.70214, 1.34364, 2.35353)
+mesh = SubResource("SphereMesh_w4eci")
+
+[node name="TorusScreen" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.807032, 0.573284, 0.141576, 0.00607031, 0.231687, -0.972772, -0.590476, 0.785918, 0.183499, -2.87978, 1.65359, 0)
+mesh = SubResource("TorusMesh_1rq1n")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.883578, 0, -0.468285, 0, 1, 0, 0.468285, 0, 0.883578, -2.23701, 1.82248, 4.43981)
