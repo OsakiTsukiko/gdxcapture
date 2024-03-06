@@ -9,3 +9,7 @@ ALSO, this, for now, is just a personal project for something I need, I will mos
 # BUILD
 Follow the godot extension build tutorial.
   
+
+https://github.com/OsakiTsukiko/gdxcapture/assets/104794884/4d2f0c5f-d451-4e06-85db-7a2693b41bc7
+
+![image](https://github.com/OsakiTsukiko/gdxcapture/assets/104794884/b3d7a94e-cef4-401c-bc03-bb9cc5ff4ba1)
