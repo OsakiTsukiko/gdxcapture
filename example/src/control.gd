@@ -6,7 +6,7 @@ var xcomp: XCapture
 
 func _ready():
 	var idk := XWinRef.get_win_array()
-	var ref := XWinRef.initialize(4)
+	var ref := XWinRef.initialize(3)
 	xcomp = XCapture.initialize(ref)
 	
 

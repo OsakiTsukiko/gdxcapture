@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://da0l1hbrbwjff"]
+
+[ext_resource type="Script" path="res://src/node_3d.gd" id="1_7txna"]
+[ext_resource type="Texture2D" uid="uid://cof64fnu06jli" path="res://icon.svg" id="3_bwepe"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_thcr1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgy0j"]
+size = Vector3(1.99365, 1, 2.04163)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cymy5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jcftq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl6qx"]
+albedo_texture = ExtResource("3_bwepe")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_7txna")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_thcr1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00268555, -0.478758, 0.0408325)
+shape = SubResource("BoxShape3D_xgy0j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.97978, 0)
+mesh = SubResource("BoxMesh_cymy5")
+
+[node name="Screen1" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(-0.8, 0, -6.99382e-08, 0, 0.8, 0, 6.99382e-08, 0, -0.8, -0.0102871, -0.00157362, -0.513622)
+mesh = SubResource("QuadMesh_jcftq")
+surface_material_override/0 = SubResource("StandardMaterial3D_fl6qx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.859906, 0.450163, 0.240657, 0, -0.471458, 0.881888, 0.510453, -0.758341, -0.40541, 2.65294, 8.84978, -5.83054)
+light_energy = 2.22
+light_indirect_energy = 2.371
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.942069, 0, 0.335419, 0, 1, 0, -0.335419, 0, -0.942069, 2.17546, 3.53307, -7.09605)
+current = true

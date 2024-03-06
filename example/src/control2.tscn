@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvqemfgiabmhn"]
+
+[ext_resource type="Script" path="res://src/control2.gd" id="1_j43cg"]
+[ext_resource type="PackedScene" uid="uid://cljqnnuro1ebh" path="res://src/node_3d3.tscn" id="2_dvday"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j43cg")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Node3D" parent="SubViewport" instance=ExtResource("2_dvday")]
