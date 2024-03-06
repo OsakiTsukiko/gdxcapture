@@ -4,7 +4,7 @@ import sys
 
 env = SConscript("godot-cpp/SConstruct")
 
-env.Append(LIBS=["X11"])
+env.Append(LIBS=["X11", "Xcomposite"])
 
 # For reference:
 # - CCFLAGS are compilation flags shared between C and C++

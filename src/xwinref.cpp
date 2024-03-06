@@ -61,8 +61,19 @@ Ref<XWinRef> XWinRef::initialize(u_int32_t id) {
     Ref<XWinRef> r_xwref = {memnew(XWinRef)};
 
     r_xwref->display_pointer = display;
+
+    for (int i = 0; i < nchildren; i += 1) {
+        XWindowAttributes attrs;
+        XGetWindowAttributes(display, children[i], &attrs);
+        if (attrs.map_state == IsViewable && attrs.width > 0 && attrs.height > 0) {
+            if (i == id) {
+                r_xwref->window_pointer = &children[i];
+            }
+        }
+    }
+
     r_xwref->window_pointer = (children + id);
-    XFree(children);
+    // XFree(children);
 
     return r_xwref;
 }

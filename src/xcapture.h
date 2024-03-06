@@ -1,13 +1,20 @@
 #ifndef XCAPTURE_H
 #define XCAPTURE_H
 
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+
 #include <godot_cpp/classes/object.hpp>
-#include <godot_cpp/classes/texture2d.hpp>
+#include <godot_cpp/classes/image_texture.hpp>
+#include <godot_cpp/classes/image.hpp>
+#include <godot_cpp/classes/ref_counted.hpp>
+
+#include "xwinref.h"
 
 namespace godot {
 
-class XCapture : public Texture2D {
-	GDCLASS(XCapture, Texture2D)
+class XCapture : public RefCounted {
+	GDCLASS(XCapture, RefCounted)
 
 private:
 
@@ -17,6 +24,13 @@ protected:
 public:
 	XCapture();
 	~XCapture();
+
+	Display* display_pointer;
+	Window* window_pointer;
+
+	static Ref<XCapture> initialize(Ref<XWinRef> win_ref);
+
+	Ref<Image> render_window();
 };
 
 }
